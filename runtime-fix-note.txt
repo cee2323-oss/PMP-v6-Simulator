@@ -1,0 +1,1 @@
+Runtime v0.2.1 normalizes shorthand matching keys during scoring while preserving the controlled source data.

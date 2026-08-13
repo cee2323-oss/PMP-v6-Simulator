@@ -1,3 +1,4 @@
 PMP Training v6.0 Simulator
-Runtime: v0.2.1
-Change: matching-key normalization for controlled bank imports
+Runtime shell: v0.2.3
+Controlled bank: imported privately from Google Drive; not stored in this public repository
+Changes: matching-key normalization, accessible matching presentation, PWA cache refresh

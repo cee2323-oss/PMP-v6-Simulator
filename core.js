@@ -6,6 +6,11 @@
   const FORMATS=['single_response','multiple_response','ordering','matching','calculation_interpretation','graphic_interpretation'];
   const REQUIRED=['Item ID','Domain','Approach','Format','Stem / Prompt','A','B','C','D','Correct Key'];
   function splitKey(v){return String(v||'').split(',').map(x=>x.trim()).filter(Boolean)}
+  function normalizeMatchingKey(v){
+    const raw=String(v||'').replace(/\s+/g,'').replace(/,/g,';');
+    if(/^([ABCD];){3}[ABCD]$/.test(raw)) return raw.split(';').map((x,i)=>`${i+1}-${x}`).join(';');
+    return raw;
+  }
   function score(item,response){
     if(response==null) return false;
     const f=item.Format;
@@ -20,12 +25,11 @@
       return arr.join(',')===key.replace(/\s+/g,'');
     }
     if(f==='matching'){
-      const normalized=(x)=>String(x||'').replace(/\s+/g,'').replace(/,/g,';');
       if(typeof response==='object'&&!Array.isArray(response)){
-        const parts=Object.keys(response).sort().map(k=>`${k}-${response[k]}`);
-        return normalized(parts.join(';'))===normalized(key);
+        const parts=Object.keys(response).sort((a,b)=>Number(a)-Number(b)).map(k=>`${k}-${response[k]}`);
+        return normalizeMatchingKey(parts.join(';'))===normalizeMatchingKey(key);
       }
-      return normalized(response)===normalized(key);
+      return normalizeMatchingKey(response)===normalizeMatchingKey(key);
     }
     return false;
   }
@@ -49,6 +53,7 @@
       if((it.Format==='graphic_interpretation'||it.Format==='calculation_interpretation')&&!String(it['Artifact Text Equivalent']||'').trim()) warnings.push(`Row ${row}: artifact item lacks text equivalent`);
       const key=String(it['Correct Key']||'').trim();
       if(key&&!['ordering','matching','multiple_response'].includes(it.Format)&&!['A','B','C','D'].includes(key)) errors.push(`Row ${row}: invalid single key '${key}'`);
+      if(it.Format==='matching'&&!/^1-[ABCD];2-[ABCD];3-[ABCD];4-[ABCD]$/.test(normalizeMatchingKey(key))) errors.push(`Row ${row}: invalid matching key '${key}'`);
       for(const d of [['domain',it.Domain],['approach',it.Approach],['format',it.Format]]) counts[d[0]][d[1]]=(counts[d[0]][d[1]]||0)+1;
     }
     return {items,errors,warnings,counts,valid:errors.length===0};
@@ -67,5 +72,5 @@
     if(!rows.length)return[]; const headers=rows.shift().map(x=>x.trim());
     return rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??''])));
   }
-  return {FORMATS,score,normalizeItem,validateItems,parseCSV};
+  return {FORMATS,score,normalizeItem,validateItems,parseCSV,normalizeMatchingKey};
 });

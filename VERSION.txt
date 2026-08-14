@@ -1,4 +1,4 @@
 PMP Training v6.0 Simulator
-Runtime shell: v0.2.4-a11y
+Runtime shell: v0.2.5-matching-fix
 Controlled bank: imported privately from Google Drive; not stored in this public repository
-Changes: VoiceOver remediation, matching accessibility semantics, focus restoration, 200% zoom support, and offline cache inclusion of accessibility-fixes.js
+Changes: VoiceOver remediation, matching accessibility semantics, focus restoration, 200% zoom support, offline cache inclusion of accessibility-fixes.js, and populated matching-situation content for the demo acceptance test.

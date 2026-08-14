@@ -18,32 +18,46 @@
     return q==='Match each situation to the most appropriate response.' || q==='Match each situation to the response letter.';
   }
 
-  function makeRadioGroup(row,rowIndex,select,parsed,source){
+  function makeRadioGroup(rowIndex,select,parsed,source){
+    const situationNumber=rowIndex+1;
     const group=document.createElement('fieldset');
     group.className='match-group';
-    group.dataset.matchGroup=String(rowIndex+1);
+    group.dataset.matchGroup=String(situationNumber);
 
     const legend=document.createElement('legend');
+    const legendId=`match-situation-${situationNumber}`;
+    legend.id=legendId;
     legend.className='match-legend';
-    legend.textContent=`${rowIndex+1}. ${source||'Situation text unavailable — item requires remediation.'}`;
+    legend.textContent=`Situation ${situationNumber}. ${source||'Situation text unavailable — item requires remediation.'}`;
     group.appendChild(legend);
+
+    const instruction=document.createElement('div');
+    instruction.className='small muted match-instruction';
+    instruction.textContent='Choose the best response for this situation.';
+    group.appendChild(instruction);
 
     const choices=document.createElement('div');
     choices.className='match-choices';
     parsed.forEach((entry,index)=>{
       const value=entry.option.value;
+      const answerText=entry.right||entry.option.textContent.trim();
       const label=document.createElement('label');
       label.className='match-choice';
+
       const radio=document.createElement('input');
       radio.type='radio';
-      radio.name=`match-group-${rowIndex+1}`;
+      radio.name=`match-group-${situationNumber}`;
       radio.value=value;
       radio.checked=entry.option.selected;
       radio.disabled=select.disabled;
-      radio.setAttribute('aria-label',`${value}. ${entry.right||entry.option.textContent.trim()}`);
+
       const text=document.createElement('span');
-      text.innerHTML=`<strong>${value}.</strong> `;
-      text.appendChild(document.createTextNode(entry.right||entry.option.textContent.trim()));
+      const choiceId=`match-s${situationNumber}-choice-${index+1}`;
+      text.id=choiceId;
+      text.innerHTML=`<strong>Answer ${value}.</strong> `;
+      text.appendChild(document.createTextNode(answerText));
+
+      radio.setAttribute('aria-labelledby',`${legendId} ${choiceId}`);
       label.appendChild(radio);
       label.appendChild(text);
       choices.appendChild(label);
@@ -53,7 +67,7 @@
         select.value=value;
         if(typeof select.onchange==='function') select.onchange();
         const status=group.querySelector('.match-status');
-        if(status) status.textContent=`Selected ${value}. ${entry.right||entry.option.textContent.trim()} for situation ${rowIndex+1}.`;
+        if(status) status.textContent=`Situation ${situationNumber}. Selected answer ${value}. ${answerText}.`;
       });
     });
     group.appendChild(choices);
@@ -76,7 +90,7 @@
       let source=parsed[rowIndex]?.left||'';
       if(!source && isDemoMatchingPrompt()) source=DEMO_FALLBACK[rowIndex]||'';
 
-      const group=makeRadioGroup(row,rowIndex,select,parsed,source);
+      const group=makeRadioGroup(rowIndex,select,parsed,source);
       row.classList.add('accessible-match-row');
       row.innerHTML='';
       row.appendChild(group);

@@ -1,4 +1,4 @@
 PMP Training v6.0 Simulator
-Runtime shell: v0.2.6-matching-cache-fix
+Runtime shell: v0.2.7-matching-voiceover-order
 Controlled bank: imported privately from Google Drive; not stored in this public repository
-Changes: VoiceOver remediation, matching accessibility semantics, populated matching-situation content, cache-busted runtime assets, fresh-first service-worker strategy, focus restoration, 200% zoom support, and offline caching of accessibility assets.
+Changes: matching interaction now uses semantic fieldset/radio groups with accessible names ordered as situation first, then answer; includes populated matching-situation content, cache-busted runtime assets, fresh-first service-worker strategy, VoiceOver remediation, focus restoration, 200% zoom support, and offline caching of accessibility assets.

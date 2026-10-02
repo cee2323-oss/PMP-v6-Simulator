@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Network+ Concept Coach</title>
+<meta name="theme-color" content="#0f172a">
+<style>
+:root{--navy:#0f172a;--navy2:#172554;--ink:#111827;--muted:#64748b;--line:#dbe4ee;--bg:#f8fafc;--card:#fff;--accent:#0f766e;--accent2:#ccfbf1;--good:#166534;--goodbg:#dcfce7;--bad:#991b1b;--badbg:#fee2e2;--warn:#92400e;--warnbg:#fef3c7}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+button,select,input{font:inherit}.app{max-width:1100px;margin:auto;min-height:100vh}.topbar{background:var(--navy);color:white;padding:18px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center;position:sticky;top:0;z-index:10}.brand{font-weight:800;letter-spacing:.2px}.brand small{display:block;font-size:12px;font-weight:600;color:#cbd5e1}.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:11px 15px;min-height:44px;font-weight:750;cursor:pointer}.btn:focus-visible,.choice:focus-visible,.navbtn:focus-visible,select:focus-visible{outline:3px solid #67e8f9;outline-offset:2px}.btn-primary{background:var(--accent);color:white}.btn-secondary{background:#e2e8f0;color:#0f172a}.btn-ghost{background:transparent;color:white;border:1px solid #475569}.btn-danger{background:#b91c1c;color:white}.btn:disabled{opacity:.5;cursor:not-allowed}
+main{padding:24px 18px 48px}.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:stretch}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}.hero h1{font-size:clamp(28px,6vw,46px);line-height:1.05;margin:0 0 12px;color:var(--navy)}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lead{font-size:18px;color:#334155;max-width:65ch}.method{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.chip{padding:7px 10px;background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;font-size:13px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:15px}.stat strong{display:block;font-size:25px;color:var(--navy)}.section-title{margin:28px 0 12px}.roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.road{border:1px solid var(--line);padding:14px;border-radius:14px;background:white}.road.locked{opacity:.6}.road b{display:block}.progress{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}.progress>span{display:block;height:100%;background:var(--accent);width:0}.footer-note{font-size:12px;color:var(--muted);margin-top:30px}
+.learning-grid{display:grid;grid-template-columns:250px 1fr;gap:18px}.sidebar{align-self:start;position:sticky;top:92px}.navbtn{display:flex;width:100%;text-align:left;border:1px solid var(--line);background:white;padding:10px 12px;border-radius:10px;margin:6px 0;cursor:pointer;gap:8px;align-items:center}.navbtn.active{border-color:var(--accent);background:var(--accent2)}.navbtn.mastered:after{content:"✓";margin-left:auto;color:var(--good);font-weight:900}
+.lesson h2{font-size:30px;margin:6px 0 8px}.lesson h3{margin-top:24px}.concept-box{background:#f8fafc;border-left:5px solid var(--accent);padding:16px;border-radius:10px}.audio-row,.demo-controls,.lesson-actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:16px 0}.speed{display:flex;gap:6px;align-items:center}.speed select{min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:white}
+.demo{border:1px solid var(--line);border-radius:16px;background:#020617;color:white;overflow:hidden;margin:16px 0}.demo-head{padding:13px 16px;background:#111827;display:flex;justify-content:space-between;gap:12px;align-items:center}.demo-stage{min-height:230px;padding:26px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative}.scene{width:100%;max-width:760px}.scene-title{font-size:22px;font-weight:800;margin-bottom:14px}.diagram{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}.node{background:#1e293b;border:2px solid #475569;border-radius:14px;padding:14px 16px;min-width:105px}.node.active{border-color:#5eead4;box-shadow:0 0 0 3px rgba(94,234,212,.12)}.arrow{font-size:26px;color:#94a3b8}.caption{background:#111827;border-top:1px solid #334155;padding:14px 16px;min-height:62px;color:#e2e8f0}.demo-progress{height:5px;background:#334155}.demo-progress span{display:block;height:100%;background:#2dd4bf;width:0}.step-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}.dot{width:9px;height:9px;border-radius:50%;background:#475569}.dot.active{background:#2dd4bf}
+.question{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}.choice{width:100%;text-align:left;margin:7px 0;padding:13px 14px;border-radius:12px;border:1px solid #cbd5e1;background:white;cursor:pointer;min-height:48px}.choice.selected{border-color:var(--accent);background:var(--accent2)}.choice.correct{border-color:var(--good);background:var(--goodbg)}.choice.wrong{border-color:var(--bad);background:var(--badbg)}.feedback{margin-top:14px;padding:14px;border-radius:12px}.feedback.good{background:var(--goodbg);color:#14532d}.feedback.bad{background:var(--badbg);color:#7f1d1d}.feedback.neutral{background:#eef2ff;color:#312e81}.hidden{display:none!important}.badge{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.badge-good{background:var(--goodbg);color:var(--good)}.badge-warn{background:var(--warnbg);color:var(--warn)}.badge-muted{background:#e2e8f0;color:#475569}
+.exam-shell{max-width:800px;margin:auto}.exam-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.exam-option{margin:9px 0}.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.weak-list{display:grid;gap:9px}.weak-item{border:1px solid var(--line);border-radius:12px;padding:12px;background:white}
+.toast{position:fixed;right:14px;bottom:14px;background:#111827;color:white;padding:12px 14px;border-radius:12px;max-width:340px;z-index:20}
+@media(max-width:760px){.hero,.learning-grid{grid-template-columns:1fr}.roadmap{grid-template-columns:1fr}.sidebar{position:static}.topbar{align-items:flex-start}.demo-stage{min-height:260px;padding:18px}.node{min-width:88px;padding:12px}.hero h1{font-size:34px}.summary-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<header class="topbar">
+<div class="brand">Network+ Concept Coach<small>N10-009 independent study tool</small></div>
+<div class="top-actions">
+<button class="btn btn-ghost" id="homeBtn" type="button">Home</button>
+<button class="btn btn-ghost" id="resetBtn" type="button">Reset progress</button>
+</div>
+</header>
+<main id="main" aria-live="polite"></main>
+</div>
+<script>
+(function(){
+"use strict";
+var STORAGE="networkplus-concept-coach-v1";
+var state=loadState();
+var view={screen:"home",unit:0,q:0,selected:null,answered:false,review:false,exam:null,demoTimer:null,demoStep:0,demoPlaying:false,speechRate:1};
+
+var units=[
+{id:"osi",title:"What the OSI Model Is",objective:"N10-009 • Networking Concepts",intro:"The OSI model is a seven-layer framework for describing how network communication works. On Network+, its most useful role is troubleshooting: it helps you isolate whether a problem is physical, local switching, routing, transport, or application related.",memory:"Think of the OSI model as a troubleshooting map, not merely a list to memorize.",narration:"The OSI model divides network communication into seven layers. For Network Plus, the key is not reciting the list. Use it as a troubleshooting map. If a cable is broken, start at Layer 1. If a VLAN is wrong, think Layer 2. If an IP address or route is wrong, think Layer 3. If a TCP or UDP port is involved, think Layer 4. This layered approach helps you narrow a problem instead of guessing.",demo:"osi",questions:[
+{q:"A workstation shows 'network cable unplugged.' Which OSI layer should you investigate first?",opts:["Layer 1 — Physical","Layer 2 — Data Link","Layer 3 — Network","Layer 4 — Transport"],a:0,why:"A cable or physical link problem belongs to Layer 1."},
+{q:"Why is the OSI model especially useful to a network technician?",opts:["It assigns public IP addresses","It provides a structured troubleshooting framework","It replaces routing tables","It encrypts network traffic"],a:1,why:"The model separates networking functions into layers, helping technicians isolate faults systematically."}]},
+{id:"l1",title:"Layer 1 — Physical",objective:"N10-009 • Networking Concepts",intro:"Layer 1 handles the physical transmission of bits. It includes copper and fiber cabling, connectors, transceivers, radio signals, hubs, repeaters, signal strength, and link state.",memory:"Layer 1 asks: can a signal physically get from here to there?",narration:"Layer 1 is the physical layer. It deals with the actual transmission medium and signal. Think cables, fiber, connectors, transceivers, wireless radio, hubs, and repeaters. Typical Layer 1 failures include a broken cable, loose connector, bad transceiver, attenuation, or electromagnetic interference.",questions:[
+{q:"Which problem is most clearly a Layer 1 issue?",opts:["Incorrect DNS record","Damaged Ethernet cable","Wrong default gateway","Blocked TCP port"],a:1,why:"A damaged cable prevents physical signal transmission, so it is a Layer 1 problem."},
+{q:"Which device is traditionally associated with Layer 1?",opts:["Router","Layer 3 switch","Repeater","Firewall"],a:2,why:"A repeater regenerates a physical signal and is associated with Layer 1."}]},
+{id:"l2",title:"Layer 2 — Data Link",objective:"N10-009 • Networking Concepts",intro:"Layer 2 moves frames across a local network. It uses MAC addresses. Ethernet switching, VLANs, 802.1Q tagging, spanning tree, and MAC address tables are central Layer 2 concepts.",memory:"Switches forward frames using MAC addresses.",narration:"Layer 2 is the Data Link layer. Its key addressing concept is the MAC address, and its key device is the Ethernet switch. A switch learns which MAC addresses are reachable through which ports and forwards frames accordingly. VLANs also operate at this layer.",demo:"switchrouter",questions:[
+{q:"A switch decides where to forward an Ethernet frame primarily by examining what?",opts:["Destination TCP port","Destination MAC address","Destination URL","DNS server address"],a:1,why:"Layer 2 switches forward Ethernet frames based on destination MAC addresses."},
+{q:"Which technology is primarily a Layer 2 segmentation mechanism?",opts:["VLAN","NAT","DNS","OSPF"],a:0,why:"VLANs create separate Layer 2 broadcast domains on switching infrastructure."}]},
+{id:"l3",title:"Layer 3 — Network",objective:"N10-009 • Networking Concepts",intro:"Layer 3 handles logical addressing and routing between different IP networks. Routers examine destination IP addresses and routing tables to choose a next hop.",memory:"Layer 3 asks: which network is the destination on, and where should this packet go next?",narration:"Layer 3 is the Network layer. IP addresses live here. Routers use destination IP networks and routing tables to forward packets between networks. If a host has the wrong IP address, subnet mask, or default gateway, Layer 3 is a strong place to investigate.",demo:"switchrouter",questions:[
+{q:"Which device primarily forwards packets between different IP networks?",opts:["Hub","Router","Repeater","Access point"],a:1,why:"Routers operate primarily at Layer 3 and forward packets between IP networks."},
+{q:"Which item belongs most directly to Layer 3?",opts:["MAC address","RJ45 connector","IPv4 address","TCP port 443"],a:2,why:"IPv4 and IPv6 logical addressing are Layer 3 functions."}]},
+{id:"l4",title:"Layer 4 — Transport",objective:"N10-009 • Networking Concepts",intro:"Layer 4 provides end-to-end transport using TCP or UDP. Port numbers identify application services. TCP provides connection-oriented reliability; UDP has lower overhead and no delivery guarantee.",memory:"Layer 4 = TCP, UDP, ports, end-to-end transport.",narration:"Layer 4 is the Transport layer. TCP and UDP are the major protocols here. Port numbers identify application services. TCP creates a connection and supports acknowledgments, sequencing, retransmission, and flow control. UDP does not establish a TCP-style connection and has lower overhead.",questions:[
+{q:"Which pair operates at Layer 4?",opts:["ARP and Ethernet","TCP and UDP","IPv4 and IPv6","HTTP and DNS"],a:1,why:"TCP and UDP are transport-layer protocols."},
+{q:"A firewall rule blocks TCP port 443. Which OSI layer is directly involved in the port number?",opts:["Layer 1","Layer 2","Layer 3","Layer 4"],a:3,why:"TCP and UDP port numbers are Transport-layer identifiers."}]},
+{id:"tcpudp",title:"TCP vs. UDP + Handshake",objective:"N10-009 • Networking Concepts",intro:"TCP is connection-oriented and emphasizes reliable ordered delivery. UDP is connectionless and emphasizes low overhead. TCP establishes a session with the three-way handshake: SYN, SYN-ACK, ACK.",memory:"TCP handshake: SYN → SYN-ACK → ACK.",narration:"TCP and UDP solve different transport needs. TCP is connection-oriented and uses acknowledgments, sequencing, and retransmissions to support reliable delivery. UDP has less overhead because it does not establish a TCP-style connection or guarantee delivery. Before TCP data transfer, the three-way handshake is SYN, SYN-ACK, and ACK.",demo:"tcp",questions:[
+{q:"What is the correct TCP three-way handshake sequence?",opts:["ACK → SYN → FIN","SYN → SYN-ACK → ACK","SYN → ACK → RST","FIN → FIN-ACK → ACK"],a:1,why:"TCP connection establishment uses SYN, SYN-ACK, then ACK."},
+{q:"Which transport protocol is generally preferred when low overhead is more important than guaranteed delivery?",opts:["TCP","UDP","ARP","ICMP"],a:1,why:"UDP reduces overhead by not providing TCP's connection and reliability mechanisms."}]},
+{id:"encap",title:"Encapsulation",objective:"N10-009 • Networking Concepts",intro:"As application data moves down the networking stack, each layer adds information needed for delivery. A useful Network+ sequence is data → segment/datagram → packet → frame → bits.",memory:"Transport = segment/datagram, Network = packet, Data Link = frame, Physical = bits.",narration:"Encapsulation describes how data is prepared for transmission. Application data reaches Layer 4 and becomes a TCP segment or UDP datagram. Layer 3 places that inside an IP packet. Layer 2 places the packet inside an Ethernet frame. Layer 1 transmits the frame as bits. The receiver reverses the process.",demo:"osi",questions:[
+{q:"At which layer is the term 'packet' most commonly used?",opts:["Physical","Data Link","Network","Transport"],a:2,why:"The Layer 3 protocol data unit is commonly called a packet."},
+{q:"Which sequence is correct from higher to lower layers?",opts:["Data → packet → segment → bits → frame","Data → segment → packet → frame → bits","Frame → packet → segment → data → bits","Data → frame → packet → segment → bits"],a:1,why:"The common encapsulation sequence is data, segment/datagram, packet, frame, then bits."}]},
+{id:"devices",title:"Core Network Devices",objective:"N10-009 • Networking Concepts",intro:"Network+ expects you to identify the purpose of common infrastructure: switches connect LAN devices, routers connect IP networks, firewalls enforce traffic policy, IDS detects, IPS can block, proxies act on behalf of clients, load balancers distribute requests, and VPNs create encrypted tunnels.",memory:"Know what problem each device solves.",narration:"Core network devices have distinct roles. Switches forward local frames. Routers forward IP packets between networks. Firewalls permit or deny traffic based on policy. An IDS detects suspicious traffic, while an IPS can actively block it. A proxy communicates on behalf of another system. A load balancer distributes requests across servers. A VPN creates an encrypted tunnel across an untrusted network.",questions:[
+{q:"A company has three web servers and wants incoming sessions distributed across them. Which device is most appropriate?",opts:["Load balancer","IDS","NAS","Repeater"],a:0,why:"A load balancer distributes client requests among multiple backend servers."},
+{q:"Which system is designed to detect suspicious traffic and can actively block it?",opts:["IDS","IPS","Proxy","DHCP server"],a:1,why:"An IPS combines detection with prevention/blocking capability."}]},
+{id:"ports",title:"Protocols and Ports",objective:"N10-009 • Networking Concepts",intro:"Port numbers help identify application services. Learn them in context rather than as isolated numbers: SSH 22 is secure remote administration, DNS 53 resolves names, HTTPS 443 secures web traffic, and so on.",memory:"Build associations: service purpose + protocol + port.",narration:"Network Plus requires recognition of common ports. Key examples include SSH and SFTP on 22, DNS on 53, DHCP on 67 and 68, HTTP on 80, HTTPS on 443, SMB on 445, RDP on 3389, NTP on 123, LDAP on 389, and SNMP on 161 with traps commonly on 162. Learn the service purpose together with the number.",demo:"dnsdhcp",questions:[
+{q:"A user can access a server with HTTP but not HTTPS. Which port should you investigate first?",opts:["22","53","80","443"],a:3,why:"HTTPS normally uses TCP port 443."},
+{q:"Which ports are associated with DHCP client/server communication?",opts:["20/21","53/54","67/68","161/162"],a:2,why:"DHCP uses UDP ports 67 and 68."},
+{q:"Which protocol normally uses port 3389?",opts:["RDP","LDAP","SIP","SNMP"],a:0,why:"Remote Desktop Protocol commonly uses TCP 3389."}]},
+{id:"traffic",title:"Traffic Types",objective:"N10-009 • Networking Concepts",intro:"Unicast is one-to-one. Broadcast targets all hosts in a broadcast domain. Multicast targets a subscribed group. Anycast uses the same address on multiple systems and routing directs a client to an appropriate instance.",memory:"Uni = one, broad = all local, multi = group, any = one of several instances.",narration:"Traffic types describe who receives a transmission. Unicast is one sender to one receiver. Broadcast is one sender to all hosts in the local broadcast domain. Multicast sends to a subscribed group. Anycast places the same address on multiple systems and lets routing direct the client to an appropriate instance.",questions:[
+{q:"A single sender transmits to a subscribed group of receivers. What traffic type is this?",opts:["Unicast","Broadcast","Multicast","Anycast"],a:2,why:"Multicast delivers traffic to members of a subscribed group."},
+{q:"Which traffic type is one sender to one receiver?",opts:["Unicast","Broadcast","Multicast","Anycast"],a:0,why:"Unicast is direct one-to-one communication."}]},
+{id:"dnsdhcp",title:"DNS and DHCP",objective:"N10-009 • Networking Concepts",intro:"DNS maps names to IP addresses. DHCP automatically provides IP configuration. The common DHCP exchange is DORA: Discover, Offer, Request, Acknowledge.",memory:"DNS = names. DHCP = configuration. DORA = Discover, Offer, Request, Acknowledge.",narration:"DNS and DHCP are foundational network services. DNS resolves names such as a website hostname into IP addresses. DHCP supplies settings such as an IP address, subnet mask, default gateway, and DNS server. The basic DHCP exchange is Discover, Offer, Request, Acknowledge, remembered as DORA.",demo:"dnsdhcp",questions:[
+{q:"A PC can ping 8.8.8.8 but cannot reach example.com by name. Which service should you investigate first?",opts:["DHCP","DNS","NTP","SNMP"],a:1,why:"IP connectivity works, but hostname resolution fails, which points to DNS."},
+{q:"Which DHCP message normally follows DHCP Discover?",opts:["Acknowledge","Release","Offer","Request"],a:2,why:"The server responds to a DHCP Discover with an Offer."}]},
+{id:"trouble",title:"Troubleshooting by Layer",objective:"N10-009 • Network Troubleshooting",intro:"Effective troubleshooting is systematic. Start with the symptom and test the lowest plausible layer first: physical link, Layer 2/VLAN, IP configuration and gateway, external reachability, DNS, then application/port behavior.",memory:"Do not guess. Isolate the lowest plausible failure domain and move upward.",narration:"Layered troubleshooting prevents random changes. First verify the physical link. Then check local switching and VLAN membership. Next verify IP address, subnet mask, and default gateway. Test reachability to the gateway and then an outside IP. If IP connectivity works but names fail, check DNS. Finally test application ports and services. This sequence narrows the fault efficiently.",demo:"trouble",questions:[
+{q:"A PC has no link light. What should you check first?",opts:["DNS zone","Cable and physical interface","Default route on the Internet edge","HTTPS certificate"],a:1,why:"No link light indicates a Layer 1 condition, so inspect the cable/interface first."},
+{q:"A PC can ping its gateway and 8.8.8.8, but web names fail. What is the next best check?",opts:["Replace the switch","Check DNS resolution","Change the VLAN","Replace the Ethernet cable"],a:1,why:"Successful IP reachability with failed name access strongly suggests DNS."}]}
+];
+
+var examBank=[
+["Which OSI layer is responsible for logical addressing and routing?",["Layer 1","Layer 2","Layer 3","Layer 4"],2,"l3"],
+["Which device forwards frames using MAC addresses?",["Router","Switch","Firewall","Load balancer"],1,"l2"],
+["Which protocol uses port 443?",["SSH","HTTPS","DNS","SMTP"],1,"ports"],
+["Which protocol is connection-oriented?",["UDP","TCP","ARP","ICMP"],1,"tcpudp"],
+["Which sequence is the TCP handshake?",["SYN, SYN-ACK, ACK","ACK, FIN, SYN","SYN, RST, ACK","FIN, FIN-ACK, ACK"],0,"tcpudp"],
+["Which service translates hostnames into IP addresses?",["DHCP","DNS","SNMP","NTP"],1,"dnsdhcp"],
+["A host reaches 8.8.8.8 but not example.com. Most likely issue?",["Layer 1","DNS","VLAN trunk","Duplex"],1,"dnsdhcp"],
+["DHCP uses which ports?",["20/21","53/54","67/68","161/162"],2,"ports"],
+["Which device connects different IP networks?",["Hub","Router","Repeater","Patch panel"],1,"l3"],
+["Which system detects suspicious traffic and alerts?",["IDS","Load balancer","NAS","Proxy"],0,"devices"],
+["Raw bits are transmitted at which OSI layer?",["Physical","Data Link","Network","Transport"],0,"l1"],
+["Ethernet frames are associated with which layer?",["Physical","Data Link","Network","Transport"],1,"l2"],
+["A Layer 3 PDU is commonly called a what?",["Bit","Frame","Packet","Segment"],2,"encap"],
+["SSH commonly uses which port?",["21","22","23","25"],1,"ports"],
+["Which protocol synchronizes clocks?",["NTP","SNMP","SMB","SIP"],0,"ports"],
+["One sender to one receiver is what traffic type?",["Multicast","Broadcast","Anycast","Unicast"],3,"traffic"],
+["Which device distributes requests across servers?",["Proxy","Load balancer","Router","IDS"],1,"devices"],
+["Which technology creates an encrypted tunnel?",["VLAN","VPN","DHCP","NAT"],1,"devices"],
+["'Network cable unplugged' points first to which layer?",["Layer 1","Layer 3","Layer 4","Layer 7"],0,"trouble"],
+["Which command/service area is most relevant when names do not resolve?",["DNS","NTP","SNMP","ARP cache only"],0,"dnsdhcp"],
+["Which system can detect and block malicious network traffic?",["IDS","IPS","NAS","DHCP"],1,"devices"],
+["RDP commonly uses which port?",["389","445","1433","3389"],3,"ports"],
+["Which traffic type targets a subscribed group?",["Unicast","Broadcast","Multicast","Anycast"],2,"traffic"],
+["What comes after DHCP Offer in DORA?",["Request","Discover","Acknowledge","Release"],0,"dnsdhcp"],
+["Which encapsulation order is correct?",["Data, segment, packet, frame, bits","Data, frame, packet, segment, bits","Bits, frame, packet, segment, data","Packet, segment, data, frame, bits"],0,"encap"]
+];
+
+var demos={
+osi:[
+{title:"Application data begins at the top",nodes:["Application data","Transport","Network","Data Link","Physical"],active:0,cap:"An application creates data that must be sent across the network."},
+{title:"Transport adds delivery information",nodes:["Application data","TCP/UDP segment","Network","Data Link","Physical"],active:1,cap:"Layer 4 adds TCP or UDP transport information."},
+{title:"Network adds IP addressing",nodes:["Application data","Segment","IP packet","Data Link","Physical"],active:2,cap:"Layer 3 adds source and destination IP information."},
+{title:"Data Link creates a frame",nodes:["Application data","Segment","Packet","Ethernet frame","Physical"],active:3,cap:"Layer 2 adds local delivery information such as MAC addressing."},
+{title:"Physical transmits bits",nodes:["Application data","Segment","Packet","Frame","Bits"],active:4,cap:"Layer 1 transmits the result as electrical, optical, or radio signals."}],
+switchrouter:[
+{title:"Inside the local LAN",nodes:["PC A","Switch","PC B"],active:1,cap:"The switch checks the destination MAC address to forward the Ethernet frame locally."},
+{title:"Destination is on another network",nodes:["PC A","Switch","Router","Remote network"],active:2,cap:"The router examines the destination IP network and selects a next hop."},
+{title:"Key distinction",nodes:["Switch = MAC + frame","Router = IP + packet"],active:0,cap:"For Network+: switch primarily means Layer 2 frames and MAC addresses; router means Layer 3 packets and IP routes."}],
+tcp:[
+{title:"Step 1 — SYN",nodes:["Client: SYN","Server"],active:0,cap:"The client asks to establish a TCP connection by sending SYN."},
+{title:"Step 2 — SYN-ACK",nodes:["Client","Server: SYN-ACK"],active:1,cap:"The server acknowledges and sends its own synchronization request."},
+{title:"Step 3 — ACK",nodes:["Client: ACK","Connection established"],active:0,cap:"The client acknowledges. The TCP connection is established."}],
+dnsdhcp:[
+{title:"DNS lookup",nodes:["example.com","DNS server","93.184.x.x"],active:1,cap:"DNS receives a hostname query and returns an IP address."},
+{title:"DHCP Discover",nodes:["Client: Discover","DHCP server"],active:0,cap:"A client without configuration broadcasts a DHCP Discover."},
+{title:"DHCP Offer",nodes:["Client","Server: Offer"],active:1,cap:"A DHCP server offers configuration."},
+{title:"DHCP Request",nodes:["Client: Request","DHCP server"],active:0,cap:"The client requests the offered configuration."},
+{title:"DHCP Acknowledge",nodes:["Client configured","Server: ACK"],active:1,cap:"The server acknowledges the lease. DORA is complete."}],
+trouble:[
+{title:"1. Physical",nodes:["Cable/link","Switch/VLAN","IP/gateway","DNS","Application"],active:0,cap:"Start by confirming link, cable, signal, and interface state."},
+{title:"2. Data Link",nodes:["Cable/link","Switch/VLAN","IP/gateway","DNS","Application"],active:1,cap:"Verify local switching, VLAN assignment, and Layer 2 connectivity."},
+{title:"3. Network",nodes:["Cable/link","Switch/VLAN","IP/gateway","DNS","Application"],active:2,cap:"Check IP address, subnet mask, gateway, and routing."},
+{title:"4. Name resolution",nodes:["Cable/link","Switch/VLAN","IP/gateway","DNS","Application"],active:3,cap:"If IP reachability works but names fail, test DNS."},
+{title:"5. Application/port",nodes:["Cable/link","Switch/VLAN","IP/gateway","DNS","Application"],active:4,cap:"Finally test the application service and required TCP or UDP port."}]
+};
+
+function defaultState(){return{progress:{},lastUnit:0,totalCorrect:0,totalAnswered:0};}
+function loadState(){try{return Object.assign(defaultState(),JSON.parse(localStorage.getItem(STORAGE)||"{}"));}catch(e){return defaultState();}}
+function save(){localStorage.setItem(STORAGE,JSON.stringify(state));}
+function unitProgress(id){if(!state.progress[id])state.progress[id]={correct:0,answered:0,mastered:false};return state.progress[id];}
+function pct(){var mastered=units.filter(function(u){return unitProgress(u.id).mastered;}).length;return Math.round(mastered/units.length*100);}
+function accuracy(){return state.totalAnswered?Math.round(state.totalCorrect/state.totalAnswered*100):0;}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[c];});}
+function stopSpeech(){if("speechSynthesis" in window)window.speechSynthesis.cancel();}
+function stopDemo(){if(view.demoTimer){clearInterval(view.demoTimer);view.demoTimer=null;}view.demoPlaying=false;}
+function setScreen(name){stopSpeech();stopDemo();view.screen=name;window.scrollTo(0,0);render();}
+
+function home(){
+var mastered=units.filter(function(u){return unitProgress(u.id).mastered;}).length;
+var next=Math.min(state.lastUnit||0,units.length-1);
+return '<section class="hero"><div class="panel"><div class="eyebrow">CompTIA Network+ N10-009</div><h1>Learn one concept. Prove you understand it. Then move on.</h1><p class="lead">This trainer teaches in short cycles: explanation, narrated demonstration, immediate knowledge check, targeted feedback, and review of weak areas.</p><div class="method"><span class="chip">1 Explain</span><span class="chip">2 Demonstrate</span><span class="chip">3 Test</span><span class="chip">4 Reteach</span><span class="chip">5 Advance</span></div><div class="lesson-actions"><button class="btn btn-primary" data-action="continue">Continue learning</button><button class="btn btn-secondary" data-action="weak">Review weak areas</button><button class="btn btn-secondary" data-action="exam">Module exam</button></div></div><div class="panel"><div class="eyebrow">Your progress</div><div class="stats"><div class="stat"><strong>'+pct()+'%</strong>Mastery</div><div class="stat"><strong>'+accuracy()+'%</strong>Quiz accuracy</div><div class="stat"><strong>'+mastered+'/'+units.length+'</strong>Concepts mastered</div><div class="stat"><strong>'+(state.totalAnswered||0)+'</strong>Checks answered</div></div><div style="margin-top:16px"><div class="progress"><span style="width:'+pct()+'%"></span></div><p style="color:var(--muted);font-size:13px">Resume: '+escapeHtml(units[next].title)+'</p></div></div></section>'
++'<h2 class="section-title">Module 1 roadmap</h2><div class="roadmap">'+units.map(function(u,i){var p=unitProgress(u.id);return '<div class="road"><b>'+(i+1)+'. '+escapeHtml(u.title)+'</b><span class="badge '+(p.mastered?'badge-good':p.answered?'badge-warn':'badge-muted')+'">'+(p.mastered?'Mastered':p.answered?'In progress':'Not started')+'</span></div>';}).join("")+'</div>'
++'<h2 class="section-title">Future modules</h2><div class="roadmap">'+["Module 2 • IP Addressing & Subnetting","Module 3 • Switching, Routing & Wireless","Module 4 • Network Operations","Module 5 • Network Security","Module 6 • Troubleshooting","Module 7 • PBQ Lab","Module 8 • Final Exam Readiness"].map(function(x){return '<div class="road locked"><b>'+x+'</b><span class="badge badge-muted">Locked</span></div>';}).join("")+'</div>'
++'<p class="footer-note">Independent study tool. CompTIA and Network+ are trademarks of CompTIA. This tool is not affiliated with or endorsed by CompTIA.</p>';
+}
+
+function lesson(){
+var u=units[view.unit],p=unitProgress(u.id),q=u.questions[view.q];
+return '<div class="learning-grid"><aside class="sidebar panel"><div class="eyebrow">Module 1</div>'+units.map(function(x,i){return '<button class="navbtn '+(i===view.unit?'active ':'')+(unitProgress(x.id).mastered?'mastered':'')+'" data-unit="'+i+'" type="button"><span>'+(i+1)+'</span><span>'+escapeHtml(x.title)+'</span></button>';}).join("")+'</aside><section class="panel lesson"><div class="eyebrow">'+u.objective+'</div><h2>'+escapeHtml(u.title)+'</h2><span class="badge '+(p.mastered?'badge-good':'badge-muted')+'">'+(p.mastered?'Mastered':'Mastery target 80%')+'</span><h3>Concept</h3><div class="concept-box"><p>'+escapeHtml(u.intro)+'</p><b>'+escapeHtml(u.memory)+'</b></div>'
++audioControls()
++(u.demo?demoMarkup(u.demo):'')
++'<div class="question"><div class="eyebrow">Check understanding '+(view.q+1)+' of '+u.questions.length+'</div><h3>'+escapeHtml(q.q)+'</h3><div role="radiogroup" aria-label="Answer choices">'+q.opts.map(function(o,i){var cls="choice";if(view.selected===i)cls+=" selected";if(view.answered&&i===q.a)cls+=" correct";if(view.answered&&view.selected===i&&i!==q.a)cls+=" wrong";return '<button class="'+cls+'" data-choice="'+i+'" '+(view.answered?'disabled':'')+' type="button">'+String.fromCharCode(65+i)+'. '+escapeHtml(o)+'</button>';}).join("")+'</div>'
++(!view.answered?'<button class="btn btn-primary" data-action="submit" '+(view.selected===null?'disabled':'')+' type="button">Submit answer</button>':feedbackMarkup(q))
++'</div></section></div>';
+}
+
+function audioControls(){
+return '<h3>Audio explanation</h3><div class="audio-row"><button class="btn btn-primary" data-action="speak" type="button">▶ Play narration</button><button class="btn btn-secondary" data-action="pauseSpeech" type="button">Pause</button><button class="btn btn-secondary" data-action="resumeSpeech" type="button">Resume</button><button class="btn btn-secondary" data-action="stopSpeech" type="button">Stop</button><div class="speed"><label for="speed">Speed</label><select id="speed"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select></div></div>';
+}
+function demoMarkup(key){
+var frames=demos[key]||[],f=frames[Math.min(view.demoStep,frames.length-1)]||frames[0];
+return '<h3>Watch demo</h3><div class="demo" data-demo="'+key+'"><div class="demo-head"><b>Animated explainer</b><span>'+(view.demoStep+1)+' / '+frames.length+'</span></div><div class="demo-progress"><span style="width:'+((view.demoStep+1)/frames.length*100)+'%"></span></div><div class="demo-stage"><div class="scene"><div class="scene-title">'+escapeHtml(f.title)+'</div><div class="diagram">'+f.nodes.map(function(n,i){return '<div class="node '+(i===f.active?'active':'')+'">'+escapeHtml(n)+'</div>'+(i<f.nodes.length-1?'<div class="arrow">→</div>':'');}).join("")+'</div><div class="step-dots">'+frames.map(function(_,i){return '<span class="dot '+(i===view.demoStep?'active':'')+'"></span>';}).join("")+'</div></div></div><div class="caption"><b>Caption:</b> '+escapeHtml(f.cap)+'</div><div class="demo-controls" style="padding:0 14px 14px"><button class="btn btn-primary" data-action="demoPlay" type="button">'+(view.demoPlaying?'Pause':'Play')+'</button><button class="btn btn-secondary" data-action="demoPrev" type="button">Previous</button><button class="btn btn-secondary" data-action="demoNext" type="button">Next</button><button class="btn btn-secondary" data-action="demoRestart" type="button">Restart</button></div></div>';
+}
+function feedbackMarkup(q){
+var ok=view.selected===q.a;
+var next=view.q<units[view.unit].questions.length-1;
+return '<div class="feedback '+(ok?'good':'bad')+'"><b>'+(ok?'Correct.':'Not yet.')+'</b> '+escapeHtml(q.why)+(ok?'':' Review the concept above, then try a closely related question before moving on.')+'</div><div class="lesson-actions">'+(ok?(next?'<button class="btn btn-primary" data-action="nextQ">Next check</button>':'<button class="btn btn-primary" data-action="completeUnit">Complete concept</button>'):'<button class="btn btn-primary" data-action="retry">Try again</button>')+'<button class="btn btn-secondary" data-action="reviewConcept">Review concept</button></div>';
+}
+
+function weakView(){
+var weak=units.map(function(u,i){var p=unitProgress(u.id);var acc=p.answered?Math.round(p.correct/p.answered*100):0;return{u:u,i:i,p:p,acc:acc};}).filter(function(x){return x.p.answered>0&&!x.p.mastered;});
+return '<section class="panel"><div class="eyebrow">Adaptive review</div><h1>Weak areas</h1><p>These concepts have been attempted but are below the 80% mastery threshold.</p><div class="weak-list">'+(weak.length?weak.map(function(x){return '<div class="weak-item"><b>'+escapeHtml(x.u.title)+'</b><div>'+x.acc+'% accuracy across '+x.p.answered+' attempt(s)</div><button class="btn btn-primary" data-unit="'+x.i+'" style="margin-top:8px">Review</button></div>';}).join(""):'<div class="feedback neutral">No weak areas are recorded yet. Complete concept checks to build an adaptive review list.</div>')+'</div></section>';
+}
+
+function startExam(){
+var shuffled=examBank.slice().sort(function(){return Math.random()-.5;}).slice(0,20);
+view.exam={qs:shuffled,index:0,selected:null,answers:[],finished:false};
+setScreen("exam");
+}
+function exam(){
+if(!view.exam)return '<section class="panel exam-shell"><h1>Module 1 Exam</h1><p>20 shuffled questions. Answers are revealed only after completion.</p><button class="btn btn-primary" data-action="startExam">Start exam</button></section>';
+if(view.exam.finished)return examSummary();
+var x=view.exam.qs[view.exam.index];
+return '<section class="panel exam-shell"><div class="exam-meta"><span class="eyebrow">Module 1 Exam</span><b>Question '+(view.exam.index+1)+' / '+view.exam.qs.length+'</b></div><div class="progress" style="margin:12px 0 24px"><span style="width:'+((view.exam.index)/view.exam.qs.length*100)+'%"></span></div><h2>'+escapeHtml(x[0])+'</h2>'+x[1].map(function(o,i){return '<button class="choice exam-option '+(view.exam.selected===i?'selected':'')+'" data-exam-choice="'+i+'" type="button">'+String.fromCharCode(65+i)+'. '+escapeHtml(o)+'</button>';}).join("")+'<div class="lesson-actions"><button class="btn btn-primary" data-action="examNext" '+(view.exam.selected===null?'disabled':'')+'>'+(view.exam.index===view.exam.qs.length-1?'Finish exam':'Next question')+'</button></div></section>';
+}
+function examSummary(){
+var e=view.exam,correct=0,by={};
+e.qs.forEach(function(x,i){var ok=e.answers[i]===x[2];if(ok)correct++;if(!by[x[3]])by[x[3]]={c:0,n:0};by[x[3]].n++;if(ok)by[x[3]].c++;});
+var score=Math.round(correct/e.qs.length*100);
+return '<section class="panel exam-shell"><div class="eyebrow">Exam complete</div><h1>'+score+'%</h1><p>'+correct+' of '+e.qs.length+' correct.</p><div class="feedback '+(score>=80?'good':'bad')+'">'+(score>=80?'You met the 80% module target.':'Review the lowest-scoring concepts before retaking the exam.')+'</div><h2>Score by concept</h2><div class="summary-grid">'+Object.keys(by).map(function(id){var u=units.find(function(z){return z.id===id;});var s=Math.round(by[id].c/by[id].n*100);return '<div class="stat"><strong>'+s+'%</strong>'+escapeHtml(u?u.title:id)+'</div>';}).join("")+'</div><div class="lesson-actions"><button class="btn btn-primary" data-action="weak">Review weak areas</button><button class="btn btn-secondary" data-action="restartExam">Retake exam</button></div></section>';
+}
+
+function render(){
+var main=document.getElementById("main");
+if(view.screen==="home")main.innerHTML=home();
+else if(view.screen==="lesson")main.innerHTML=lesson();
+else if(view.screen==="weak")main.innerHTML=weakView();
+else if(view.screen==="exam")main.innerHTML=exam();
+wire();
+}
+function wire(){
+var main=document.getElementById("main");
+main.querySelectorAll("[data-unit]").forEach(function(b){b.addEventListener("click",function(){view.unit=parseInt(b.dataset.unit,10);state.lastUnit=view.unit;view.q=0;view.selected=null;view.answered=false;view.demoStep=0;setScreen("lesson");});});
+main.querySelectorAll("[data-choice]").forEach(function(b){b.addEventListener("click",function(){view.selected=parseInt(b.dataset.choice,10);render();});});
+main.querySelectorAll("[data-exam-choice]").forEach(function(b){b.addEventListener("click",function(){view.exam.selected=parseInt(b.dataset.examChoice,10);render();});});
+main.querySelectorAll("[data-action]").forEach(function(b){b.addEventListener("click",function(){act(b.dataset.action);});});
+var sp=document.getElementById("speed");if(sp)sp.addEventListener("change",function(){view.speechRate=parseFloat(sp.value)||1;});
+}
+function act(a){
+if(a==="continue"){view.unit=Math.min(state.lastUnit||0,units.length-1);view.q=0;view.selected=null;view.answered=false;view.demoStep=0;setScreen("lesson");}
+else if(a==="weak")setScreen("weak");
+else if(a==="exam")setScreen("exam");
+else if(a==="startExam"||a==="restartExam")startExam();
+else if(a==="submit"){
+if(view.selected===null)return;var u=units[view.unit],q=u.questions[view.q],ok=view.selected===q.a,p=unitProgress(u.id);p.answered++;state.totalAnswered++;if(ok){p.correct++;state.totalCorrect++;}p.mastered=p.answered>=2&&(p.correct/p.answered)>=.8;save();view.answered=true;render();}
+else if(a==="retry"){view.selected=null;view.answered=false;render();}
+else if(a==="reviewConcept"){view.selected=null;view.answered=false;window.scrollTo(0,0);render();}
+else if(a==="nextQ"){view.q++;view.selected=null;view.answered=false;render();}
+else if(a==="completeUnit"){var p=unitProgress(units[view.unit].id);p.mastered=(p.answered>0&&p.correct/p.answered>=.8);if(p.mastered&&view.unit<units.length-1){view.unit++;state.lastUnit=view.unit;view.q=0;view.selected=null;view.answered=false;view.demoStep=0;save();render();window.scrollTo(0,0);}else{save();setScreen("home");}}
+else if(a==="speak"){speakCurrent();}
+else if(a==="pauseSpeech"){if("speechSynthesis" in window)window.speechSynthesis.pause();}
+else if(a==="resumeSpeech"){if("speechSynthesis" in window)window.speechSynthesis.resume();}
+else if(a==="stopSpeech"){stopSpeech();}
+else if(a==="demoPlay"){toggleDemo();}
+else if(a==="demoNext"){stepDemo(1);}
+else if(a==="demoPrev"){stepDemo(-1);}
+else if(a==="demoRestart"){stopDemo();view.demoStep=0;render();}
+else if(a==="examNext"){if(view.exam.selected===null)return;view.exam.answers.push(view.exam.selected);if(view.exam.index===view.exam.qs.length-1){view.exam.finished=true;}else{view.exam.index++;view.exam.selected=null;}render();}
+}
+function speakCurrent(){
+if(!("speechSynthesis" in window)){alert("Speech narration is not supported in this browser.");return;}
+stopSpeech();var u=units[view.unit];var utter=new SpeechSynthesisUtterance(u.narration);utter.rate=view.speechRate;utter.pitch=1;window.speechSynthesis.speak(utter);
+}
+function toggleDemo(){
+if(view.demoPlaying){stopDemo();render();return;}
+var key=units[view.unit].demo,frames=demos[key]||[];if(!frames.length)return;
+view.demoPlaying=true;render();
+view.demoTimer=setInterval(function(){if(view.demoStep>=frames.length-1){stopDemo();render();return;}view.demoStep++;render();},3200);
+}
+function stepDemo(delta){
+stopDemo();var key=units[view.unit].demo,frames=demos[key]||[];view.demoStep=Math.max(0,Math.min(frames.length-1,view.demoStep+delta));render();
+}
+
+document.getElementById("homeBtn").addEventListener("click",function(){setScreen("home");});
+document.getElementById("resetBtn").addEventListener("click",function(){if(confirm("Reset all Network+ Concept Coach progress on this device?")){localStorage.removeItem(STORAGE);state=defaultState();view.unit=0;view.q=0;view.selected=null;view.answered=false;setScreen("home");}});
+render();
+})();
+</script>
+</body>
+</html>

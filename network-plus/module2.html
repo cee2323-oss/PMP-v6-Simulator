@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Network+ Concept Coach — Module 2</title>
+<meta name="theme-color" content="#0f172a">
+<style>
+:root{--navy:#0f172a;--ink:#111827;--muted:#64748b;--line:#dbe4ee;--bg:#f8fafc;--card:#fff;--accent:#0f766e;--accent2:#ccfbf1;--good:#166534;--goodbg:#dcfce7;--bad:#991b1b;--badbg:#fee2e2}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}button,select,input{font:inherit}.app{max-width:1100px;margin:auto;min-height:100vh}.top{background:var(--navy);color:white;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;top:0;z-index:10}.brand{font-weight:850}.brand small{display:block;color:#cbd5e1;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 15px;min-height:44px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn:focus-visible,.choice:focus-visible,.nav:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #67e8f9;outline-offset:2px}.primary{background:var(--accent);color:white}.secondary{background:#e2e8f0;color:#0f172a}.ghost{background:transparent;color:white;border:1px solid #475569}.btn:disabled{opacity:.5}main{padding:24px 18px 48px}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:18px}.hero h1{font-size:clamp(28px,6vw,44px);line-height:1.08;margin:5px 0 10px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}.lead{font-size:18px;color:#334155}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.chip{background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:6px 9px;font-size:13px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:14px}.stat strong{display:block;font-size:25px}.grid{display:grid;grid-template-columns:250px 1fr;gap:18px}.side{align-self:start;position:sticky;top:88px}.nav{width:100%;border:1px solid var(--line);background:white;text-align:left;border-radius:10px;padding:10px 12px;margin:5px 0;cursor:pointer}.nav.active{background:var(--accent2);border-color:var(--accent)}.nav.mastered:after{content:" ✓";float:right;color:var(--good)}.concept{border-left:5px solid var(--accent);background:#f8fafc;border-radius:10px;padding:16px}.lesson h2{font-size:30px;margin:7px 0 10px}.audio,.controls,.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:15px 0}.audio select{min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px}.demo{background:#020617;color:white;border-radius:16px;overflow:hidden;margin:16px 0}.stage{min-height:235px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center}.diagram{display:flex;gap:9px;align-items:center;justify-content:center;flex-wrap:wrap}.node{border:2px solid #475569;background:#1e293b;padding:13px 15px;border-radius:13px;min-width:105px}.node.on{border-color:#5eead4}.arrow{font-size:25px;color:#94a3b8}.caption{padding:13px 16px;border-top:1px solid #334155;background:#111827}.bar{height:5px;background:#334155}.bar span{display:block;height:100%;background:#2dd4bf}.question{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.choice{width:100%;text-align:left;border:1px solid #cbd5e1;background:white;padding:13px;border-radius:12px;margin:7px 0;cursor:pointer;min-height:48px}.choice.sel{background:var(--accent2);border-color:var(--accent)}.choice.ok{background:var(--goodbg);border-color:var(--good)}.choice.no{background:var(--badbg);border-color:var(--bad)}.feedback{padding:14px;border-radius:12px;margin-top:13px}.good{background:var(--goodbg);color:#14532d}.bad{background:var(--badbg);color:#7f1d1d}.trainer{border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0;background:#f8fafc}.trainer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.trainer input{width:100%;min-height:44px;border:1px solid #cbd5e1;border-radius:10px;padding:10px}.progress{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}.progress span{display:block;height:100%;background:var(--accent)}.exam{max-width:780px;margin:auto}.badge{display:inline-flex;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;background:#e2e8f0}.badge.done{background:var(--goodbg);color:var(--good)}.hidden{display:none!important}
+@media(max-width:760px){.hero,.grid{grid-template-columns:1fr}.side{position:static}.trainer-grid{grid-template-columns:1fr}.stage{min-height:265px}.top{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="brand">Network+ Concept Coach<small>Module 2 • IP Addressing & Subnetting</small></div><div class="actions"><a class="btn ghost" href="index.html">Module 1</a><button class="btn ghost" id="home">Home</button><button class="btn ghost" id="reset">Reset Module 2</button></div></header>
+<main id="main" aria-live="polite"></main>
+</div>
+<script>
+(function(){
+"use strict";
+var KEY="networkplus-concept-coach-module2-v1";
+var s=load(),v={screen:"home",unit:0,q:0,sel:null,answered:false,rate:1,demoStep:0,timer:null,playing:false,exam:null};
+var units=[
+{id:"ipv4",title:"IPv4 Address Anatomy",intro:"An IPv4 address is 32 bits, written as four decimal octets. A subnet mask or CIDR prefix separates the network portion from the host portion.",memory:"IPv4 = 32 bits = four 8-bit octets.",narr:"An IPv4 address contains thirty two bits, displayed as four decimal octets separated by dots. The subnet mask tells you which bits represent the network and which bits represent hosts. CIDR expresses the same idea with a slash prefix, such as slash twenty four.",demo:"bits",qs:[
+["How many bits are in an IPv4 address?",["16","32","64","128"],1,"IPv4 uses 32 bits."],
+["What does /24 represent?",["24 host addresses","24 network prefix bits","24 octets","Port 24"],1,"CIDR /24 means the first 24 bits are the network prefix."]]},
+{id:"binary",title:"Binary and Octet Values",intro:"Subnetting relies on binary place values. In one octet, the bit values are 128, 64, 32, 16, 8, 4, 2, 1.",memory:"128 • 64 • 32 • 16 • 8 • 4 • 2 • 1",narr:"Each IPv4 octet contains eight binary positions. From left to right their decimal values are one hundred twenty eight, sixty four, thirty two, sixteen, eight, four, two, and one. Add the values where the bit is one to convert binary to decimal.",demo:"binary",qs:[
+["What decimal value is binary 11000000?",["128","192","224","240"],1,"128 + 64 = 192."],
+["Which is the highest-value bit in an IPv4 octet?",["1","8","64","128"],3,"The leftmost bit has decimal value 128."]]},
+{id:"cidr",title:"CIDR and Subnet Masks",intro:"CIDR prefix length tells how many bits are fixed as the network portion. /24 = 255.255.255.0, /25 = .128, /26 = .192, /27 = .224, /28 = .240, /29 = .248, /30 = .252 in the final octet.",memory:"From /25 onward: 128, 192, 224, 240, 248, 252.",narr:"CIDR and subnet masks express the same boundary. Slash twenty four corresponds to 255.255.255.0. As you borrow more bits in the final octet, slash twenty five becomes 128, slash twenty six 192, slash twenty seven 224, slash twenty eight 240, slash twenty nine 248, and slash thirty 252.",demo:"split",qs:[
+["Which mask matches /26?",["255.255.255.0","255.255.255.128","255.255.255.192","255.255.255.224"],2,"/26 uses two network bits in the final octet: 128 + 64 = 192."],
+["Which CIDR matches 255.255.255.240?",["/26","/27","/28","/29"],2,"240 in the last octet is 11110000, so the mask has 28 network bits."]]},
+{id:"ranges",title:"Network, Host Range, Broadcast",intro:"A subnet has a network address at the start and a broadcast address at the end. Traditional IPv4 host calculations subtract those two addresses from the total.",memory:"Network = first address. Broadcast = last. Hosts live between them.",narr:"Within an IPv4 subnet, the first address identifies the network and the last address is the broadcast address. Usable host addresses are between them. For Network Plus subnetting questions, a slash twenty six has sixty four total addresses and typically sixty two usable host addresses.",demo:"range",qs:[
+["How many total addresses are in a /27 subnet?",["16","32","64","128"],1,"A /27 leaves 5 host bits, so 2^5 = 32 total addresses."],
+["In 192.168.1.0/24, what is the broadcast address?",["192.168.1.0","192.168.1.1","192.168.1.254","192.168.1.255"],3,"The /24 range runs from .0 through .255; .255 is the broadcast address."]]},
+{id:"block",title:"Fast Subnetting with Block Size",intro:"For /25 through /30 in the last octet, block size = 256 minus the mask value. Example: /27 has mask 224, so block size is 32. Subnets start at 0, 32, 64, 96, and so on.",memory:"Block size = 256 − interesting-octet mask.",narr:"A fast subnetting method is the block size technique. Find the octet where the mask stops being 255. Subtract that mask value from 256. A slash twenty seven has 224 in the final octet, so the block size is 32. Valid subnet starts are zero, 32, 64, 96, 128, 160, 192, and 224.",demo:"block",qs:[
+["What is the block size for /28?",["8","16","32","64"],1,"/28 has mask 240; 256 - 240 = 16."],
+["Which is a valid /27 subnet boundary in the last octet?",["45","64","70","100"],1,"/27 boundaries occur every 32: 0, 32, 64, 96, and so on."]]},
+{id:"special",title:"Private, APIPA, and Loopback",intro:"Private IPv4 ranges are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. APIPA is 169.254.0.0/16. Loopback is 127.0.0.0/8, commonly 127.0.0.1.",memory:"Private: 10/8, 172.16/12, 192.168/16. APIPA: 169.254/16. Loopback: 127/8.",narr:"Recognize special IPv4 ranges immediately. Private addresses include the ten network, 172.16 through 172.31, and 192.168. APIPA begins 169.254 and commonly appears when a host cannot obtain DHCP configuration. Loopback is the 127 network, with 127.0.0.1 commonly used to test the local TCP IP stack.",qs:[
+["A Windows host self-assigns 169.254.20.5. What does this most strongly suggest?",["DNS failure","DHCP failure or unavailability","Normal public addressing","Loopback test"],1,"169.254.0.0/16 is APIPA and commonly indicates failure to obtain a DHCP lease."],
+["Which address is private?",["8.8.8.8","172.20.5.9","198.51.100.20","203.0.113.9"],1,"172.20.5.9 falls inside 172.16.0.0/12."]]},
+{id:"nat",title:"NAT and PAT",intro:"NAT translates addresses between networks. PAT lets many inside hosts share one or a small number of public IPv4 addresses by also translating transport-layer port numbers.",memory:"NAT translates addresses. PAT adds ports so many sessions can share an address.",narr:"Network Address Translation changes IP addressing as traffic crosses a boundary. Port Address Translation goes further by tracking transport ports, which allows many private hosts to share a single public IPv4 address while maintaining separate sessions.",demo:"nat",qs:[
+["Which technology most directly allows many private hosts to share one public IPv4 address by tracking ports?",["VLAN","PAT","STP","DNS"],1,"PAT distinguishes sessions with translated port numbers."],
+["What is the primary purpose of NAT?",["Resolve hostnames","Translate IP addressing between networks","Assign VLAN tags","Synchronize clocks"],1,"NAT translates IP addresses across a network boundary."]]},
+{id:"ipv6",title:"IPv6 Essentials",intro:"IPv6 addresses are 128 bits and written in hexadecimal. Leading zeros may be removed within a hextet, and one continuous run of zero hextets may be compressed with ::. IPv6 does not use broadcast.",memory:"IPv6 = 128 bits, hexadecimal, :: compression once, no broadcast.",narr:"IPv6 addresses are one hundred twenty eight bits long and are written as hexadecimal hextets. You can remove leading zeros inside a hextet, and you can use a double colon once to compress one continuous sequence of zero hextets. IPv6 replaces broadcast behavior with mechanisms including multicast.",demo:"ipv6",qs:[
+["How many bits are in an IPv6 address?",["32","64","96","128"],3,"IPv6 uses 128-bit addresses."],
+["Which statement about IPv6 is correct?",["It uses broadcast extensively","It uses 32-bit addresses","It does not use broadcast","It requires NAT for all Internet access"],2,"IPv6 has no broadcast address; multicast and other mechanisms are used instead."]]},
+{id:"ipv6types",title:"IPv6 Address Types and Transition",intro:"Global unicast is routable. Link-local addresses begin with FE80::/10. Loopback is ::1. Multicast uses FF00::/8. Transition approaches include dual stack, tunneling, and NAT64.",memory:"FE80 = link-local. ::1 = loopback. FF = multicast.",narr:"Know several common IPv6 address categories. Global unicast addresses are routable. Link local addresses use FE80 slash ten and operate on the local link. The IPv6 loopback address is double colon one. Multicast begins with FF. Networks transitioning from IPv4 may use dual stack, tunneling, or translation such as NAT64.",qs:[
+["Which prefix identifies IPv6 link-local addresses?",["FE80::/10","FF00::/8","127.0.0.0/8","169.254.0.0/16"],0,"IPv6 link-local addresses are in FE80::/10."],
+["What is the IPv6 loopback address?",["::","::1","FF02::1","FE80::1"],1,"::1 is the IPv6 loopback address."]]}
+];
+var demos={
+bits:[["32 bits total",["Octet 1","Octet 2","Octet 3","Octet 4"],0,"Four octets of 8 bits each make 32 bits."],["Network and host portions",["Network bits","Host bits"],0,"The prefix length controls where the network portion ends."]],
+binary:[["One octet",["128","64","32","16","8","4","2","1"],0,"Each binary position has a place value."],["11000000",["128 ON","64 ON","32 off","16 off","8 off","4 off","2 off","1 off"],1,"128 + 64 = 192."]],
+split:[["/24",["255","255","255","0"],2,"Twenty-four network bits fill the first three octets."],["/27",["255","255","255","224"],3,"Three additional network bits in the last octet produce 224."]],
+range:[["A /27 block",["Network .64","Hosts .65–.94","Broadcast .95"],1,"The subnet starts at .64 and ends at .95."],["Usable hosts",["32 total","minus network","minus broadcast","30 usable"],3,"Traditional host count is total addresses minus two."]],
+block:[["/27 mask 224",["256","− 224","= 32"],2,"The block size is 32."],["Subnet boundaries",["0","32","64","96","128","160","192","224"],2,"Each valid subnet begins on a multiple of 32."]],
+nat:[["Inside network",["10.0.0.10:51500","PAT gateway","203.0.113.5:40001"],1,"PAT translates both the private IP and source port."],["Second inside host",["10.0.0.11:51500","PAT gateway","203.0.113.5:40002"],1,"A different translated port keeps the sessions distinct."]],
+ipv6:[["128-bit address",["2001","0db8","0000","0000","0000","0000","0000","0001"],0,"IPv6 is written as eight hexadecimal hextets."],["Compressed form",["2001:db8::1"],0,"Leading zeros are removed and the zero run is compressed once with double colon."]]
+};
+var exam=[
+["How many bits are in IPv4?",["16","32","64","128"],1,"ipv4"],
+["Which mask is /27?",["255.255.255.128","255.255.255.192","255.255.255.224","255.255.255.240"],2,"cidr"],
+["How many total addresses are in /26?",["32","64","126","256"],1,"ranges"],
+["How many usable hosts are typical in /29?",["4","6","8","14"],1,"ranges"],
+["What is the block size for mask 255.255.255.240?",["8","16","32","64"],1,"block"],
+["Which is private?",["8.8.8.8","10.44.2.9","198.51.100.4","203.0.113.7"],1,"special"],
+["169.254.50.4 is what?",["Loopback","APIPA","Multicast","Public DNS"],1,"special"],
+["127.0.0.1 is commonly used for what?",["Loopback","Broadcast","Default gateway","DHCP relay"],0,"special"],
+["What does PAT translate in addition to IP addresses?",["VLAN IDs","Port numbers","DNS names","MAC OUIs"],1,"nat"],
+["IPv6 length?",["32","64","96","128"],3,"ipv6"],
+["IPv6 link-local prefix?",["FF00::/8","FE80::/10","2000::/3","::1/128"],1,"ipv6types"],
+["IPv6 loopback?",["::","::1","FE80::1","FF02::1"],1,"ipv6types"],
+["IPv6 multicast begins with?",["FE","FF","10","172"],1,"ipv6types"],
+["Which transition method runs IPv4 and IPv6 together?",["Dual stack","PAT only","STP","VLAN tagging"],0,"ipv6types"],
+["Binary 11100000 equals?",["192","224","240","248"],1,"binary"],
+["A /28 leaves how many host bits?",["2","3","4","8"],2,"cidr"],
+["For 192.168.1.64/27, broadcast is?",[".63",".64",".95",".96"],2,"ranges"],
+["For 192.168.1.64/27, first usable host is?",[".64",".65",".94",".95"],1,"ranges"],
+["Which address family has no broadcast?",["IPv4","IPv6","Both use broadcast","Neither supports multicast"],1,"ipv6"],
+["NAT primarily does what?",["Translates IP addresses","Creates VLANs","Resolves DNS","Encrypts TLS"],0,"nat"],
+["Which private range includes 172.31.255.254?",["10.0.0.0/8","172.16.0.0/12","192.168.0.0/16","None"],1,"special"],
+["/30 has how many total addresses?",["2","4","6","8"],1,"ranges"]
+];
+function def(){return{p:{},correct:0,answered:0,last:0};}
+function load(){try{return Object.assign(def(),JSON.parse(localStorage.getItem(KEY)||"{}"));}catch(e){return def();}}
+function save(){localStorage.setItem(KEY,JSON.stringify(s));}
+function up(id){if(!s.p[id])s.p[id]={c:0,n:0,m:false};return s.p[id];}
+function mastery(){return Math.round(units.filter(function(x){return up(x.id).m;}).length/units.length*100);}
+function acc(){return s.answered?Math.round(s.correct/s.answered*100):0;}
+function esc(x){return String(x).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"})[c];});}
+function stop(){if(v.timer){clearInterval(v.timer);v.timer=null;}v.playing=false;if("speechSynthesis" in window)window.speechSynthesis.cancel();}
+function screen(x){stop();v.screen=x;window.scrollTo(0,0);render();}
+function home(){
+return '<section class="hero"><div class="panel"><div class="eyebrow">N10-009 • Module 2</div><h1>IP addressing and subnetting, taught one decision at a time.</h1><p class="lead">Short explanations, narrated demonstrations, immediate checks, and a subnetting practice engine.</p><div class="chips"><span class="chip">IPv4</span><span class="chip">CIDR</span><span class="chip">Subnetting</span><span class="chip">NAT/PAT</span><span class="chip">IPv6</span></div><div class="row"><button class="btn primary" data-a="continue">Continue Module 2</button><button class="btn secondary" data-a="trainer">Subnetting trainer</button><button class="btn secondary" data-a="exam">Module exam</button></div></div><div class="panel"><div class="stats"><div class="stat"><strong>'+mastery()+'%</strong>Mastery</div><div class="stat"><strong>'+acc()+'%</strong>Accuracy</div><div class="stat"><strong>'+s.answered+'</strong>Checks</div><div class="stat"><strong>'+units.filter(function(x){return up(x.id).m;}).length+'/'+units.length+'</strong>Mastered</div></div><div class="progress" style="margin-top:16px"><span style="width:'+mastery()+'%"></span></div></div></section><h2>Concept roadmap</h2><div class="panel">'+units.map(function(x,i){return '<button class="nav '+(up(x.id).m?'mastered':'')+'" data-u="'+i+'">'+(i+1)+'. '+esc(x.title)+'</button>';}).join("")+'</div><p style="color:var(--muted);font-size:12px">Independent study tool. CompTIA and Network+ are trademarks of CompTIA. Not affiliated with or endorsed by CompTIA.</p>';
+}
+function audio(){return '<h3>Audio explanation</h3><div class="audio"><button class="btn primary" data-a="speak">▶ Play narration</button><button class="btn secondary" data-a="pause">Pause</button><button class="btn secondary" data-a="resume">Resume</button><button class="btn secondary" data-a="stop">Stop</button><label>Speed <select id="rate"><option value=".75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select></label></div>';}
+function demo(k){var fs=demos[k]||[],f=fs[Math.min(v.demoStep,fs.length-1)];if(!f)return"";return '<h3>Watch demo</h3><div class="demo"><div class="bar"><span style="width:'+((v.demoStep+1)/fs.length*100)+'%"></span></div><div class="stage"><div><h3>'+esc(f[0])+'</h3><div class="diagram">'+f[1].map(function(n,i){return '<div class="node '+(i===f[2]?'on':'')+'">'+esc(n)+'</div>'+(i<f[1].length-1?'<div class="arrow">→</div>':'');}).join("")+'</div></div></div><div class="caption"><b>Caption:</b> '+esc(f[3])+'</div><div class="controls" style="padding:0 14px 14px"><button class="btn primary" data-a="play">'+(v.playing?'Pause':'Play')+'</button><button class="btn secondary" data-a="prev">Previous</button><button class="btn secondary" data-a="next">Next</button><button class="btn secondary" data-a="restart">Restart</button></div></div>';}
+function lesson(){
+var u=units[v.unit],q=u.qs[v.q],p=up(u.id);
+return '<div class="grid"><aside class="panel side"><div class="eyebrow">Module 2</div>'+units.map(function(x,i){return '<button class="nav '+(i===v.unit?'active ':'')+(up(x.id).m?'mastered':'')+'" data-u="'+i+'">'+(i+1)+'. '+esc(x.title)+'</button>';}).join("")+'<button class="btn secondary" style="width:100%;margin-top:12px" data-a="trainer">Subnetting trainer</button></aside><section class="panel lesson"><div class="eyebrow">N10-009 • Networking Concepts</div><h2>'+esc(u.title)+'</h2><span class="badge '+(p.m?'done':'')+'">'+(p.m?'Mastered':'Target 80%')+'</span><h3>Concept</h3><div class="concept"><p>'+esc(u.intro)+'</p><b>'+esc(u.memory)+'</b></div>'+audio()+(u.demo?demo(u.demo):'')+'<div class="question"><div class="eyebrow">Check understanding '+(v.q+1)+' of '+u.qs.length+'</div><h3>'+esc(q[0])+'</h3>'+q[1].map(function(o,i){var cl="choice";if(v.sel===i)cl+=" sel";if(v.answered&&i===q[2])cl+=" ok";if(v.answered&&v.sel===i&&i!==q[2])cl+=" no";return '<button class="'+cl+'" data-c="'+i+'" '+(v.answered?'disabled':'')+'>'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>';}).join("")+(!v.answered?'<button class="btn primary" data-a="submit" '+(v.sel===null?'disabled':'')+'>Submit answer</button>':feedback(q))+'</div></section></div>';
+}
+function feedback(q){var ok=v.sel===q[2],more=v.q<units[v.unit].qs.length-1;return '<div class="feedback '+(ok?'good':'bad')+'"><b>'+(ok?'Correct.':'Not yet.')+'</b> '+esc(q[3])+(ok?'':' Review the concept, then retry before advancing.')+'</div><div class="row">'+(ok?(more?'<button class="btn primary" data-a="nextq">Next check</button>':'<button class="btn primary" data-a="done">Complete concept</button>'):'<button class="btn primary" data-a="retry">Try again</button>')+'</div>';}
+function trainer(){
+if(!v.train)v.train=makeTrain();
+var t=v.train;
+return '<section class="panel exam"><div class="eyebrow">Subnetting practice engine</div><h1>Find the subnet range</h1><div class="trainer"><h2>'+t.ip+'/'+t.prefix+'</h2><p>Enter the network address and broadcast address.</p><div class="trainer-grid"><label>Network address<input id="netAns" inputmode="decimal" placeholder="192.168.1.64"></label><label>Broadcast address<input id="bcAns" inputmode="decimal" placeholder="192.168.1.95"></label></div><div class="row"><button class="btn primary" data-a="checkTrain">Check</button><button class="btn secondary" data-a="newTrain">New problem</button></div><div id="trainFeedback"></div></div><div class="concept"><b>Method</b><p>1. Convert the prefix to a mask. 2. Find block size: 256 − mask value in the changing octet. 3. Find the multiple of that block containing the IP. 4. That boundary is the network address. The address immediately before the next boundary is the broadcast.</p></div></section>';
+}
+function makeTrain(){
+var prefixes=[25,26,27,28,29,30],p=prefixes[Math.floor(Math.random()*prefixes.length)],block=Math.pow(2,32-p),start=Math.floor(Math.random()*(256/block))*block,host=Math.min(254,start+1+Math.floor(Math.random()*Math.max(1,block-2))),base="192.168."+Math.floor(Math.random()*20)+".";
+return{prefix:p,ip:base+host,network:base+start,broadcast:base+(start+block-1),block:block};
+}
+function examView(){
+if(!v.exam)return '<section class="panel exam"><div class="eyebrow">Module 2 Exam</div><h1>20 shuffled questions</h1><p>Answers remain hidden until the exam is complete.</p><button class="btn primary" data-a="startExam">Start exam</button></section>';
+if(v.exam.done){var c=0,by={};v.exam.qs.forEach(function(x,i){var ok=v.exam.answers[i]===x[2];if(ok)c++;if(!by[x[3]])by[x[3]]={c:0,n:0};by[x[3]].n++;if(ok)by[x[3]].c++;});var score=Math.round(c/v.exam.qs.length*100);return '<section class="panel exam"><div class="eyebrow">Exam complete</div><h1>'+score+'%</h1><div class="feedback '+(score>=80?'good':'bad')+'">'+(score>=80?'You met the 80% target.':'Review lower-scoring concepts and retake.')+'</div><h2>By concept</h2>'+Object.keys(by).map(function(id){var u=units.find(function(z){return z.id===id;});return '<div class="stat" style="margin:8px 0"><strong>'+Math.round(by[id].c/by[id].n*100)+'%</strong>'+esc(u?u.title:id)+'</div>';}).join("")+'<div class="row"><button class="btn primary" data-a="startExam">Retake</button><button class="btn secondary" data-a="home">Home</button></div></section>';}
+var x=v.exam.qs[v.exam.i];
+return '<section class="panel exam"><div class="eyebrow">Module 2 Exam</div><div class="progress"><span style="width:'+(v.exam.i/v.exam.qs.length*100)+'%"></span></div><h3>Question '+(v.exam.i+1)+' of '+v.exam.qs.length+'</h3><h2>'+esc(x[0])+'</h2>'+x[1].map(function(o,i){return '<button class="choice '+(v.exam.sel===i?'sel':'')+'" data-ec="'+i+'">'+String.fromCharCode(65+i)+'. '+esc(o)+'</button>';}).join("")+'<button class="btn primary" data-a="examNext" '+(v.exam.sel===null?'disabled':'')+'>'+(v.exam.i===v.exam.qs.length-1?'Finish exam':'Next')+'</button></section>';
+}
+function render(){var m=document.getElementById("main");if(v.screen==="home")m.innerHTML=home();else if(v.screen==="lesson")m.innerHTML=lesson();else if(v.screen==="trainer")m.innerHTML=trainer();else if(v.screen==="exam")m.innerHTML=examView();wire();}
+function wire(){var m=document.getElementById("main");m.querySelectorAll("[data-u]").forEach(function(b){b.onclick=function(){v.unit=parseInt(b.dataset.u,10);s.last=v.unit;v.q=0;v.sel=null;v.answered=false;v.demoStep=0;save();screen("lesson");};});m.querySelectorAll("[data-c]").forEach(function(b){b.onclick=function(){v.sel=parseInt(b.dataset.c,10);render();};});m.querySelectorAll("[data-ec]").forEach(function(b){b.onclick=function(){v.exam.sel=parseInt(b.dataset.ec,10);render();};});m.querySelectorAll("[data-a]").forEach(function(b){b.onclick=function(){act(b.dataset.a);};});var r=document.getElementById("rate");if(r)r.onchange=function(){v.rate=parseFloat(r.value)||1;};}
+function act(a){
+if(a==="home")screen("home");
+else if(a==="continue"){v.unit=Math.min(s.last||0,units.length-1);v.q=0;v.sel=null;v.answered=false;v.demoStep=0;screen("lesson");}
+else if(a==="trainer")screen("trainer");
+else if(a==="exam")screen("exam");
+else if(a==="submit"){if(v.sel===null)return;var u=units[v.unit],q=u.qs[v.q],p=up(u.id),ok=v.sel===q[2];p.n++;s.answered++;if(ok){p.c++;s.correct++;}p.m=p.n>=2&&p.c/p.n>=.8;save();v.answered=true;render();}
+else if(a==="retry"){v.sel=null;v.answered=false;render();}
+else if(a==="nextq"){v.q++;v.sel=null;v.answered=false;render();}
+else if(a==="done"){var p=up(units[v.unit].id);p.m=p.n>0&&p.c/p.n>=.8;if(p.m&&v.unit<units.length-1){v.unit++;s.last=v.unit;v.q=0;v.sel=null;v.answered=false;v.demoStep=0;save();render();window.scrollTo(0,0);}else{save();screen("home");}}
+else if(a==="speak"){if(!("speechSynthesis" in window)){alert("Speech narration is not supported in this browser.");return;}window.speechSynthesis.cancel();var z=new SpeechSynthesisUtterance(units[v.unit].narr);z.rate=v.rate;window.speechSynthesis.speak(z);}
+else if(a==="pause"){if("speechSynthesis" in window)window.speechSynthesis.pause();}
+else if(a==="resume"){if("speechSynthesis" in window)window.speechSynthesis.resume();}
+else if(a==="stop"){stop();}
+else if(a==="play"){if(v.playing){stop();render();return;}var fs=demos[units[v.unit].demo]||[];v.playing=true;render();v.timer=setInterval(function(){if(v.demoStep>=fs.length-1){stop();render();}else{v.demoStep++;render();}},3200);}
+else if(a==="next"){stop();var fs=demos[units[v.unit].demo]||[];v.demoStep=Math.min(fs.length-1,v.demoStep+1);render();}
+else if(a==="prev"){stop();v.demoStep=Math.max(0,v.demoStep-1);render();}
+else if(a==="restart"){stop();v.demoStep=0;render();}
+else if(a==="newTrain"){v.train=makeTrain();render();}
+else if(a==="checkTrain"){var n=(document.getElementById("netAns").value||"").trim(),b=(document.getElementById("bcAns").value||"").trim(),ok=n===v.train.network&&b===v.train.broadcast,el=document.getElementById("trainFeedback");el.innerHTML='<div class="feedback '+(ok?'good':'bad')+'"><b>'+(ok?'Correct.':'Check the block boundaries.')+'</b> Network: '+v.train.network+' • Broadcast: '+v.train.broadcast+' • Block size: '+v.train.block+'</div>';}
+else if(a==="startExam"){v.exam={qs:exam.slice().sort(function(){return Math.random()-.5;}).slice(0,20),i:0,sel:null,answers:[],done:false};render();}
+else if(a==="examNext"){if(v.exam.sel===null)return;v.exam.answers.push(v.exam.sel);if(v.exam.i===v.exam.qs.length-1)v.exam.done=true;else{v.exam.i++;v.exam.sel=null;}render();}
+}
+document.getElementById("home").onclick=function(){screen("home");};
+document.getElementById("reset").onclick=function(){if(confirm("Reset all Module 2 progress on this device?")){localStorage.removeItem(KEY);s=def();v.unit=0;v.q=0;v.sel=null;v.answered=false;screen("home");}};
+render();
+})();
+</script>
+</body>
+</html>
